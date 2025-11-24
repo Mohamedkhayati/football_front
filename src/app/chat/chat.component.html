@@ -1,0 +1,58 @@
+<div class="chat-window">
+  <div *ngFor="let message of messages" [ngClass]="message.sender">
+    <strong>{{message.sender === 'user' ? 'You' : 'Assistant'}}:</strong>
+    {{message.content}}
+  </div>
+</div>
+<textarea [(ngModel)]="userInput" placeholder="Type your football question..." rows="3"></textarea>
+<button (click)="sendMessage()" [disabled]="isLoading || !userInput.trim()">Send</button>
+<!-- Image Upload Section -->
+<div class="image-upload-section">
+  <h3>Upload Football Player Image</h3>
+  
+  <div class="upload-controls">
+    <input 
+      type="file" 
+      #fileInput
+      (change)="onImageSelected($event)" 
+      accept="image/*"
+      style="display: none">
+    
+    <button (click)="fileInput.click()" class="btn-upload">
+      📷 Choose Image
+    </button>
+    
+    <div *ngIf="imagePreview" class="image-preview-container">
+      <img [src]="imagePreview" alt="Preview" class="image-preview">
+      <button (click)="clearImage()" class="btn-clear">✖ Clear</button>
+    </div>
+  </div>
+  
+  <textarea 
+    *ngIf="selectedImage"
+    [(ngModel)]="imageDescription"
+    placeholder="Optional: Add description or ask specific questions about the image..."
+    rows="2"
+    class="description-input">
+  </textarea>
+  
+  <button 
+    *ngIf="selectedImage"
+    (click)="analyzeImage()" 
+    [disabled]="isLoading"
+    class="btn-analyze">
+    🔍 Analyze Image
+  </button>
+</div>
+
+<!-- Display images in chat messages -->
+<div class="chat-messages">
+  <div *ngFor="let message of messages" [ngClass]="message.sender">
+    <span class="avatar">{{ message.sender === 'user' ? '👤' : '⚽' }}</span>
+    <div class="bubble">
+      <strong>{{ message.sender === 'user' ? 'You' : 'Assistant' }}</strong>
+      <span>{{message.content}}</span>
+      <img *ngIf="message.imageUrl" [src]="message.imageUrl" class="message-image" alt="Football player">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+.chat-window {
+  max-width: 500px;
+  margin: 30px auto;
+  border-radius: 8px;
+  background: #f6f6f8;
+  padding: 16px;
+  box-shadow: 0 4px 10px #0001;
+  min-height: 300px;
+}
+
+.user {
+  text-align: right;
+  color: #3266d3;
+  font-weight: 500;
+}
+
+.bot {
+  text-align: left;
+  color: #000;
+  font-weight: 500;
+  background: #e0e0e6;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+textarea {
+  width: 94%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin: 12px 0;
+  padding: 10px;
+  font-family: inherit;
+  resize: none;
+}
+
+button {
+  padding: 10px 24px;
+  background: #3266d3;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.image-upload-section {
+  margin: 20px 0;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px dashed #ccc;
+}
+
+.image-upload-section h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.upload-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-upload, .btn-analyze {
+  padding: 10px 20px;
+  background: #3266d3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-upload:hover, .btn-analyze:hover {
+  background: #2550b8;
+}
+
+.image-preview-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-preview {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+.btn-clear {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.description-input {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.message-image {
+  display: block;
+  max-width: 300px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}

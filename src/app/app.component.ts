@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChatComponent } from './chat/chat.component'; // <-- Static import
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [ChatComponent], // <-- Use static reference here!
+  template: `<app-chat />`
 })
-export class AppComponent {
-  title = 'football-assistant-frontend';
-}
+export class AppComponent {}
