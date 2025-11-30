@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ChatService {
-  private apiUrl = 'http://localhost:8090/api/chat';
+  private apiUrl = 'http://localhost:8095/api/chat';
 
   constructor(private http: HttpClient) {}
 
@@ -23,7 +23,7 @@ export class ChatService {
   if (description) {
     formData.append('description', description);
   }
-  return this.http.post('http://localhost:8090/api/image/analyze', formData);
+  return this.http.post('http://localhost:8095/api/image/analyze', formData);
 }
 
 }
